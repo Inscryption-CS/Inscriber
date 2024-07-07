@@ -19,7 +19,7 @@ namespace Inscriber
         }
         public String toCSV()
         {
-            return $"{id};{original};{translation}";
+            return $"\"{id}\",\"{original.Replace("\"", "\"\"")}\",\"{translation.Replace("\"", "\"\"")}\"";
         }
         public String getId()
         {
