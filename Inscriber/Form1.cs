@@ -46,14 +46,15 @@ namespace Inscriber
             Cursor.Current = Cursors.WaitCursor;
             List<TranslatedString> strings = loader.LoadFile(openFileDialog.FileName);
             String[] row = new string[3];
-            
-            foreach(TranslatedString s in strings)
+
+            stringsView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            stringsView.Rows.Add(strings.Count);
+            for (int i = 0;i < strings.Count;i++)
             {
-                row[0] = s.getId();
-                row[1] = s.getOriginal();
-                row[2] = s.getTranslation();
-                stringsView.Rows.Add(row);
+                DataGridViewRow dataRow = new DataGridViewRow();
+                stringsView.Rows[i].SetValues(strings[i].getId(), strings[i].getOriginal(), strings[i].getTranslation());
             }
+            stringsView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
 
             Cursor.Current = Cursors.Default;
             currentStatus.Text = $"Loaded {loader.StringCount} strings";
