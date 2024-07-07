@@ -13,6 +13,7 @@ namespace Inscriber
     public partial class Form1 : Form
     {
         private string[] fileHeader;
+        Random random = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -147,6 +148,33 @@ namespace Inscriber
             for(int row = 0; row < stringsView.RowCount; row++)
             {
                 fillControlSequences(row);
+            }
+        }
+
+        private bool askForExit()
+        {
+            string exitMessage = "Do you really want to quit? (Don't forget to save your changes!)";
+            if (random.Next(51) == 48)
+            {
+                exitMessage = "Are you sure you want me to die?";
+            }
+            DialogResult result = MessageBox.Show(exitMessage, "Inscriber", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return result == DialogResult.Yes;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(askForExit())
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(!askForExit())
+            {
+                e.Cancel = true;
             }
         }
     }
