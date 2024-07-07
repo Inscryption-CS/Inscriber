@@ -131,7 +131,9 @@ namespace Inscriber
                 {
                     continue;
                 }
-                strings.Add(new TranslatedString(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString()));
+                string originalValue = row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString();
+                string translatedValue = row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString();
+                strings.Add(new TranslatedString(row.Cells[0].Value.ToString(), originalValue, translatedValue));
             }
             currentStatus.Text = $"Exporting...";
             Application.DoEvents(); // Make sure the status bar updates
