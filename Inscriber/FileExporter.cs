@@ -9,16 +9,9 @@ namespace Inscriber
 {
     internal class FileExporter
     {
-        public void ExportFile(string filename, List<TranslatedString> strings, string[] fileHeader)
+        public void ExportFile(string filename, List<TranslatedString> strings)
         {
-            if(fileHeader.Length != 4)
-            {
-                throw new ArgumentException("Invalid file header");
-            }
             StreamWriter writer = new StreamWriter(filename);
-            foreach(string headerLine in fileHeader) {
-                writer.WriteLine(headerLine);
-            }
             foreach(TranslatedString trString in strings)
             {
                 writer.WriteLine(trString.toCSV());

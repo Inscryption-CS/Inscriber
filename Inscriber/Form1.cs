@@ -12,7 +12,6 @@ namespace Inscriber
 {
     public partial class Form1 : Form
     {
-        private string[] fileHeader;
         Random random = new Random();
         public Form1()
         {
@@ -55,7 +54,6 @@ namespace Inscriber
                 stringsView.Rows.Add(row);
             }
 
-            fileHeader = loader.getFileHeader();
             Cursor.Current = Cursors.Default;
             currentStatus.Text = $"Loaded {loader.StringCount} strings";
         }
@@ -137,7 +135,7 @@ namespace Inscriber
             Application.DoEvents(); // Make sure the status bar updates
             Cursor.Current = Cursors.WaitCursor;
 
-            exporter.ExportFile(exportDialog.FileName, strings, fileHeader);
+            exporter.ExportFile(exportDialog.FileName, strings);
 
             currentStatus.Text = $"Exported {strings.Count} strings to {exportDialog.FileName}";
             Cursor.Current = Cursors.Default;

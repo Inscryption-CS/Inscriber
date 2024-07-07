@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +42,7 @@
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autofillControlCodesButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.autofillAllControlCodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stringsView = new System.Windows.Forms.DataGridView();
             this.StringID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StringOriginal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +51,6 @@
             this.currentStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
-            this.autofillAllControlCodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stringsView)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -87,7 +87,7 @@
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.openFileToolStripMenuItem.Text = "Open";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileClick);
             // 
@@ -95,7 +95,7 @@
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
@@ -103,7 +103,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -123,14 +123,14 @@
             // goToStringToolStripMenuItem
             // 
             this.goToStringToolStripMenuItem.Name = "goToStringToolStripMenuItem";
-            this.goToStringToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.goToStringToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.goToStringToolStripMenuItem.Text = "Go To String";
             // 
             // nextStringToolStripMenuItem
             // 
             this.nextStringToolStripMenuItem.Name = "nextStringToolStripMenuItem";
             this.nextStringToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.nextStringToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nextStringToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.nextStringToolStripMenuItem.Text = "Next String";
             // 
             // toolStripDropDownButton3
@@ -162,6 +162,15 @@
             this.autofillControlCodesButton.Text = "Autofill Control Codes";
             this.autofillControlCodesButton.Click += new System.EventHandler(this.ctrlSequenceButtonClick);
             // 
+            // autofillAllControlCodesToolStripMenuItem
+            // 
+            this.autofillAllControlCodesToolStripMenuItem.Name = "autofillAllControlCodesToolStripMenuItem";
+            this.autofillAllControlCodesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.autofillAllControlCodesToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.autofillAllControlCodesToolStripMenuItem.Text = "Autofill All Control Codes";
+            this.autofillAllControlCodesToolStripMenuItem.Click += new System.EventHandler(this.autofillAllControlCodesToolStripMenuItem_Click);
+            // 
             // stringsView
             // 
             this.stringsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -190,16 +199,16 @@
             // StringOriginal
             // 
             this.StringOriginal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StringOriginal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StringOriginal.DefaultCellStyle = dataGridViewCellStyle1;
             this.StringOriginal.HeaderText = "Original";
             this.StringOriginal.Name = "StringOriginal";
             // 
             // StringTranslation
             // 
             this.StringTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StringTranslation.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StringTranslation.DefaultCellStyle = dataGridViewCellStyle2;
             this.StringTranslation.HeaderText = "Translation";
             this.StringTranslation.Name = "StringTranslation";
             // 
@@ -223,22 +232,13 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.Filter = "ILANG File|*.ilang";
-            this.openFileDialog.Title = "Open ILANG file";
+            this.openFileDialog.Filter = "CSV File|*.csv";
+            this.openFileDialog.Title = "Open String File";
             // 
             // exportDialog
             // 
-            this.exportDialog.Filter = "ILANG file|*.ilang";
+            this.exportDialog.Filter = "CSV File|*.csv";
             this.exportDialog.Title = "Export strings";
-            // 
-            // autofillAllControlCodesToolStripMenuItem
-            // 
-            this.autofillAllControlCodesToolStripMenuItem.Name = "autofillAllControlCodesToolStripMenuItem";
-            this.autofillAllControlCodesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.autofillAllControlCodesToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
-            this.autofillAllControlCodesToolStripMenuItem.Text = "Autofill All Control Codes";
-            this.autofillAllControlCodesToolStripMenuItem.Click += new System.EventHandler(this.autofillAllControlCodesToolStripMenuItem_Click);
             // 
             // Form1
             // 

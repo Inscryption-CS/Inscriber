@@ -11,15 +11,6 @@ namespace Inscriber
     internal class FileLoader
     {
         public int StringCount;
-        private string[] fileHeader;
-        public FileLoader()
-        {
-            fileHeader = new string[4];
-        }
-        public string[] getFileHeader()
-        {
-            return fileHeader; 
-        }
         public List<TranslatedString> LoadFile(string filename)
         {
             List<TranslatedString> strings = new List<TranslatedString>();
@@ -30,13 +21,7 @@ namespace Inscriber
                 string line = "";
                 int stringCount = 0;
 
-                for (int i = 0; line != "#ENDMETA#"; i++)
-                {
-                    line = reader.ReadLine();
-                    fileHeader[i] = line;
-                }
-
-                line = reader.ReadLine(); // Then read to end
+                line = reader.ReadLine(); 
                 while (line != null)
                 {
                     if(line == "") {
