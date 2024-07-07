@@ -14,6 +14,7 @@ namespace Inscriber
     {
         Random random = new Random();
         ExplainCodeForm codes = new ExplainCodeForm();
+        string lastFilename = "";
         public Form1()
         {
             InitializeComponent();
@@ -56,6 +57,7 @@ namespace Inscriber
             }
             stringsView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
 
+            lastFilename = openFileDialog.SafeFileName;
             Cursor.Current = Cursors.Default;
             currentStatus.Text = $"Loaded {loader.StringCount} strings";
         }
@@ -117,6 +119,7 @@ namespace Inscriber
 
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            exportDialog.FileName = lastFilename;
             DialogResult exportResult = exportDialog.ShowDialog();
             FileExporter exporter = new FileExporter();
             if(exportResult != DialogResult.OK)
