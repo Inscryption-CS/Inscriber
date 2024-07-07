@@ -13,6 +13,7 @@ namespace Inscriber
     public partial class Form1 : Form
     {
         Random random = new Random();
+        ExplainCodeForm codes = new ExplainCodeForm();
         public Form1()
         {
             InitializeComponent();
@@ -174,6 +175,15 @@ namespace Inscriber
             {
                 e.Cancel = true;
             }
+        }
+
+        private void explainControlCodesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(Application.OpenForms.OfType<ExplainCodeForm>().Count() > 0)
+            {
+                return;
+            }
+            codes.Show();
         }
     }
 }

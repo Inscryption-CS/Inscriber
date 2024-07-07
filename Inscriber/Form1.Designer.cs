@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +51,8 @@
             this.currentStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.exportDialog = new System.Windows.Forms.SaveFileDialog();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.explainControlCodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stringsView)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -61,7 +63,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
             this.toolStripDropDownButton2,
-            this.toolStripDropDownButton3});
+            this.toolStripDropDownButton3,
+            this.toolStripDropDownButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -199,16 +202,16 @@
             // StringOriginal
             // 
             this.StringOriginal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StringOriginal.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StringOriginal.DefaultCellStyle = dataGridViewCellStyle5;
             this.StringOriginal.HeaderText = "Original";
             this.StringOriginal.Name = "StringOriginal";
             // 
             // StringTranslation
             // 
             this.StringTranslation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StringTranslation.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StringTranslation.DefaultCellStyle = dataGridViewCellStyle6;
             this.StringTranslation.HeaderText = "Translation";
             this.StringTranslation.Name = "StringTranslation";
             // 
@@ -239,6 +242,24 @@
             // 
             this.exportDialog.Filter = "CSV File|*.csv";
             this.exportDialog.Title = "Export strings";
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.explainControlCodesToolStripMenuItem});
+            this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(45, 22);
+            this.toolStripDropDownButton4.Text = "Help";
+            // 
+            // explainControlCodesToolStripMenuItem
+            // 
+            this.explainControlCodesToolStripMenuItem.Name = "explainControlCodesToolStripMenuItem";
+            this.explainControlCodesToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.explainControlCodesToolStripMenuItem.Text = "Explain Control Codes";
+            this.explainControlCodesToolStripMenuItem.Click += new System.EventHandler(this.explainControlCodesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -284,6 +305,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StringTranslation;
         private System.Windows.Forms.SaveFileDialog exportDialog;
         private System.Windows.Forms.ToolStripMenuItem autofillAllControlCodesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
+        private System.Windows.Forms.ToolStripMenuItem explainControlCodesToolStripMenuItem;
     }
 }
 
